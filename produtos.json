@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "nome": "Septo Titânio Gold",
+        "categoria": "Joia",
+        "preco": "R$ 150,00",
+        "imagem": "https://picsum.photos/id/20/300",
+        "descricao": "Joia hipoalergênica."
+    },
+    {
+        "id": 2,
+        "nome": "Flash Botânico",
+        "categoria": "Tattoo",
+        "preco": "R$ 400,00",
+        "imagem": "https://picsum.photos/id/10/300",
+        "descricao": "Fine line 10cm."
+    },
+    {
+        "id": 3,
+        "nome": "Microbell Reto",
+        "categoria": "Joia",
+        "preco": "R$ 100,00",
+        "imagem": "https://picsum.photos/id/30/300",
+        "descricao": "Para sobrancelha ou mamilo."
+    }
+]

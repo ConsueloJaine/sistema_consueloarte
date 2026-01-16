@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consuelo & Arte corporal | Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img.img/w.png">
+</head>
+<body>
+
+<nav class="tab-menu">
+    <button id="btn-admin" class="tab-btn hidden" onclick="switchTab('estoque')">Admin</button>
+    <button class="tab-btn active" onclick="switchTab('joias')">Joias</button>
+    <button class="tab-btn" onclick="switchTab('tattoos')">Tatuagens</button>
+    <button class="tab-btn" onclick="switchTab('feedback')">Avaliações</button>
+    <button class="tab-btn" onclick="switchTab('cuidados')">Cuidados</button>
+</nav>
+
+<header class="main-header" onclick="acessoAdmin()" style="cursor: default;">
+    <h1>Consuelo & Arte Corporal</h1>
+    <p>Tatuagem & Perfuração corporal</p>
+</header>
+
+<main id="app-content">
+    <section id="estoque" class="tab-section hidden">
+        <div class="section-header">
+            <h2>💎 Gestão de Joias (Catálogo)</h2>
+            <button class="btn-gold" id="openModal">+ Nova Joia</button>
+        </div>
+        <div id="inventory-grid" class="grid-container"></div>
+
+        <hr style="margin: 40px 0; opacity: 0.2;">
+
+        <div class="section-header">
+            <h2>📦 Materiais e Insumos</h2>
+            <button class="btn-outline" onclick="abrirModalInsumo()" style="padding: 10px 20px; cursor: pointer;">+ Cadastrar materiais</button>
+        </div>
+        <div class="card">
+            <div id="lista-insumos" class="insumos-lista"></div>
+        </div>
+    </section>
+
+    <section id="joias" class="tab-section">
+        <h2>Catálogo de Joias</h2>
+        <div id="joias-grid" class="grid-container"></div>
+    </section>
+
+    <section id="tattoos" class="tab-section hidden">
+        <div class="pinterest-box card" style="margin-bottom: 20px;">
+            <h3>🎨 Inspirações</h3>
+            <p>Busque referências no Pinterest, saia do obvio. Aqui esta algumas artes do meu gosto pessoal, se inspire:</p>
+           <div class="pin-links" style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap; margin:20px 0;">
+            <a href="https://pin.it/6ohLvB8nh" target="_blank" class="pin-item">
+        <img src="https://i.pinimg.com/1200x/44/62/a5/4462a59957b2dd0f32d0418fd55fd84d.jpg" alt="Referência imagem do pinterest, tatuagem floral organica">
+    </a>
+    <a href="https://pin.it/24xnbNYKr" target="_blank" class="pin-item">
+        <img src="https://i.pinimg.com/736x/ff/df/0d/ffdf0d99c602d86c191395fef55c239c.jpg" alt="Referência imagem do pinterest, tatuagem em preto e branco">
+    </a>
+    <a href="https://pin.it/1klaYCX7w" target="_blank" class="pin-item">
+        <img src="https://i.pinimg.com/1200x/0c/0f/19/0c0f1951bb869d4239b12bdce16b8058.jpg" alt="Referência imagem do pinterest, tatuagem floral">
+    </a>
+    <a href="https://pin.it/E77y9Elxq" target="_blank" class="pin-item">
+        <img src="https://i.pinimg.com/736x/fa/ee/28/faee28f2864af20e90d4ba4481af58ed.jpg" alt="Referência imagem do pinterest, tatuagem nas costas">
+    </a>
+    <a href="https://pin.it/6kiwYMsOc" target="_blank" class="pin-item">
+        <img src="https://i.pinimg.com/736x/d2/dd/e7/d2dde70390e1f931945a95fe925dba3b.jpg" alt="Referência imagem do pinterest, tatuagem na barriga">
+    </a>
+    <a href="https://pin.it/6QsrnV7B0" target="_blank" class="pin-item">
+        <img src="https://i.pinimg.com/736x/31/aa/73/31aa73a8f40b1d51994a3f1f77cd7eff.jpg" alt="Referência imagem do pinterest,tatuagem dragao">
+    </a>
+            </div>
+            <a href="https://pinterest.com" target="_blank" class="btn-pin">Abrir Pinterest</a>
+
+</div>
+        
+        <h2>Meus Trabalhos</h2>
+        <div class="insta-grid" id="insta-grid">
+
+             <div class="insta-post">
+        <img src="img.img/tattoo-sandy.jpeg" alt="Trabalho">
+        <div class="post-info">
+            <p class="post-desc">Flor GRANDE - encaixe perfeito.</p>
+            <span class="post-value">R$ 700,00</span>
+        </div>
+    </div>
+
+     <div class="insta-post">
+        <img src="img.img/tatuagem-renann.jpg" alt="Trabalho">
+        <div class="post-info">
+            <p class="post-desc">Dot Speed com uma arte Black Work, isso é luxo.</p>
+            <span class="post-value">R$ 850,00</span>
+        </div>
+    </div>
+
+    <div class="insta-post">
+        <img src="img.img/tettoo-marcelo.jpeg" alt="Trabalho">
+        <div class="post-info">
+            <p class="post-desc">Minha obra de arte - AUTORAL - Black Work.</p>
+            <span class="post-value">R$ 2000,00</span>
+        </div>
+    </div>
+
+    <div class="insta-post">
+        <img src="img.img/tattoo-aline.jpeg" alt="Trabalho">
+        <div class="post-info">
+            <p class="post-desc">Flashs - Frase com um Escorpiao vermelho.</p>
+            <span class="post-value">R$ 250,00</span>
+        </div>
+    </div>
+
+     <div class="insta-post">
+        <img src="img.img/tatoo-edlane.jpeg" alt="Trabalho de Tattoo">
+        <div class="post-info">
+            <p class="post-desc">AUTORAL - Raminhos com medalha de São Bento.</p>
+            <span class="post-value">R$ 400,00</span>
+        </div>
+    </div>
+    
+    <div class="insta-post">
+        <img src="img.img/tattoo-frase.jpeg" alt="Trabalho">
+        <div class="post-info">
+            <p class="post-desc">Frases nas costas - muito capricho pra entregar a melhor qualidade.</p>
+            <span class="post-value">R$ 350,00</span>
+        </div>
+    </div>
+
+    <div class="insta-post">
+        <img src="img.img/tattoo-fernando.jpeg" alt="Trabalho">
+        <div class="post-info">
+            <p class="post-desc">Fechamento de braço e antebraço (só a parte de fora) com artes Egípcias.</p>
+            <span class="post-value">R$ 1800,00</span>
+        </div>
+    </div>
+
+    <div class="insta-post">
+        <img src="img.img/tattoo-geisa.jpeg" alt="Trabalho">
+        <div class="post-info">
+            <p class="post-desc">Uma das minhas queridinhas, sou apaixonada nesse trabalho - AUTORAL.</p>
+            <span class="post-value">R$ 480,00</span>
+        </div>
+    </div>
+    
+     <div class="insta-post">
+        <img src="img.img/tattoo-gui.jpeg" alt="Trabalho">
+        <div class="post-info">
+            <p class="post-desc">Para os amantes de FLASHs tattoo (valor de 12 mini tatuagens).</p>
+            <span class="post-value">R$ 500,00</span>
+        </div>
+    </div>
+
+
+     <div class="insta-post">
+        <img src="img.img/tattoo-iasmim.jpeg" alt="Trabalho">
+        <div class="post-info">
+            <p class="post-desc">Fine line floral - Homenagem ao pet - reforma da libelula.</p>
+            <span class="post-value">R$ 900,00</span>
+        </div>
+    </div>
+
+     <div class="insta-post">
+        <img src="img.img/tattoo-isadora.jpeg" alt="Trabalho">
+        <div class="post-info">
+            <p class="post-desc">Flashs tatoo - um bracinho cheio das mini tatto com artes bem estilosas.</p>
+            <span class="post-value">R$ 200,00 (a partir)</span>
+        </div>
+    </div>
+
+     <div class="insta-post">
+        <img src="img.img/tattoo-juliana.jpeg" alt="Trabalho">
+        <div class="post-info">
+            <p class="post-desc">AUTORAL e feita toda no free hand - perfeição.</p>
+            <span class="post-value">R$ 650,00</span>
+        </div>
+    </div>
+
+     <div class="insta-post">
+        <img src="img.img/tattoo-nicole.jpeg" alt="Trabalho">
+        <div class="post-info">
+            <p class="post-desc">Essa flor fez sucesso, ainda mais com nosso mapa do Tocantins.</p>
+            <span class="post-value">R$ 350,00</span>
+        </div>
+    </div>
+
+     <div class="insta-post">
+        <img src="img.img/tattoo-salmo.jpeg" alt="Trabalho">
+        <div class="post-info">
+            <p class="post-desc">Antebraço fechado com o Salmo, numa letra que sou apaixonada.</p>
+            <span class="post-value">R$ 500,00</span>
+        </div>
+    </div>
+
+    <div class="insta-post">
+        <img src="img.img/tatoo-henrique.jpeg" alt="Trabalho de Tattoo">
+        <div class="post-info">
+            <p class="post-desc">Black work com hachura</p>
+            <span class="post-value">R$ 480,00</span>
+        </div>
+    </div>
+
+    </div>
+
+    </section>
+
+    <section id="feedback" class="tab-section hidden">
+        <h2>Feedbacks dos Clientes</h2>
+        <form id="feedback-form" class="card">
+            <input type="text" id="fbNome" placeholder="Seu nome" required>
+            <label for="fbNota">Sua nota:</label>
+            <select id="fbNota">
+                <option value="5">⭐⭐⭐⭐⭐ (Excelente)</option>
+                <option value="4">⭐⭐⭐⭐ (Muito Bom)</option>
+                <option value="3">⭐⭐⭐ (Bom)</option>
+                <option value="2">⭐⭐ (Regular)</option>
+                <option value="1">⭐ (Pode Melhorar)</option>
+            </select>
+            <textarea id="fbTexto" placeholder="Conte sua experiência..." required></textarea>
+            <label>Poste uma foto do resultado:</label>
+            <input type="file" id="fbFoto" accept="image/*">
+            <button type="submit" class="btn-gold">Enviar Avaliação</button>
+        </form>
+        <div id="feedback-list" class="grid-container"></div>
+    </section>
+
+    <section id="cuidados" class="tab-section hidden">
+    <header style="text-align: center; margin-bottom: 30px;">
+        <h2>Guia de Cicatrização & Longevidade</h2>
+        <p>A cicatrização é 50% do resultado final. Cuide da sua arte com carinho.</p>
+    </header>
+
+    <div class="cuidados-container">
+        <div class="cuidados-box piercing">
+    <div class="box-header">
+        <span>✨</span>
+        <h3>Body Piercing Avançado</h3>
+    </div>
+    
+    <div class="cuidados-item">
+        <h4>1. O Ritual de Higiene</h4>
+        <p>A limpeza deve ser feita 2x ao dia. No banho, deixe a água morna escorrer para amolecer secreções. Use apenas <strong>sabonete líquido neutro ou antibacteriano</strong> na região, enxaguando bem. Após o banho, utilize soro fisiológico 0,9% (frio) com uma haste flexível para remover qualquer resíduo restante. <strong>Seque bem</strong> com papel descartável; a umidade é o combustível para fungos e bactérias.</p>
+    </div>
+
+    <div class="cuidados-item">
+        <h4>2. Dormir e Higiene de Contato</h4>
+        <p><strong>Jamais durma sobre a perfuração</strong> nos primeiros meses. A pressão contínua altera o ângulo do furo (angulação) e causa granulomas. Mantenha fronhas e travesseiros limpos e troque-os com mais frequência. Evite que cabelos sujos ou fones de ouvido entrem em contato com a joia.</p>
+    </div>
+
+    <div class="cuidados-item">
+        <h4>3. Alimentação & Sistema Imune</h4>
+        <p>Seu corpo precisa de energia para cicatrizar. Nos primeiros 15 dias, evite alimentos altamente inflamatórios: carne de porco gordurosa, frutos do mar (camarão), excesso de chocolate, frituras e pimenta. Mantenha-se hidratada.</p>
+    </div>
+
+    <div class="cuidados-item">
+        <h4>4. Granulomas e "Bolinhas"</h4>
+        <p>Apareceu uma bolinha vermelha? Geralmente é um <strong>Granuloma de Irritação</strong>, causado por trauma (bater, enroscar), pressão (dormir em cima) ou joia de má qualidade. Não tente espremer ou usar remédios caseiros; isso piora a lesão.</p>
+    </div>
+
+    <div class="cuidados-item alerta-critico">
+        <h4>🚨 Atenção Urgente</h4>
+        <p>Se notar febre, dor latejante que não passa, pus esverdeado com odor ou inchaço excessivo que aperta a joia contra a pele, <strong>entre em contato comigo imediatamente</strong> ou procure atendimento médico. Não remova a joia por conta própria em caso de suspeita de infecção.</p>
+    </div>
+    
+    <a href="https://youtube.com/shorts/FeoVfLUXwxs?si=VPn4t4yXVc40FpD8" class="btn-video">🎥 Vídeo: Como evitar o Granuloma</a>
+</div>
+
+        <div class="cuidados-box tattoo">
+            <div class="box-header">
+                <span>🎨</span>
+                <h3>Tatuagens</h3>
+            </div>
+
+            <div class="cuidados-item">
+                <h4>1. Primeiras Horas</h4>
+                <p>Mantenha o curativo pelo tempo instruído. Ao lavar, use apenas água morna e sabonete neutro glicerinado. Não esfregue; seque pressionando suavemente uma toalha de papel descartável.</p>
+            </div>
+
+            <div class="cuidados-item">
+                <h4>2. Hidratação e Regeneração</h4>
+                <p>Após o 3º dia, aplique uma camada <strong>muito fina</strong> de creme de hidratar (escolha um hidratante sem fragrancia e corante). A pele precisa respirar; o excesso de creme pode causar espinhas ou expelir o pigmento.</p>
+            </div>
+
+            <div class="cuidados-item">
+                <h4>3. Restrições Cruciais</h4>
+                <ul>
+                    <li><strong>Sol e Água:</strong> 30 dias sem sol direto, mar, piscina ou sauna. O sol é o maior inimigo da nitidez do traço fino (Fine Line).</li>
+                    <li><strong>Alimentação:</strong> Evite excesso de alimentos muito gordurosos ou alergênicos (porco, frutos do mar) na primeira semana se sua pele for sensível.</li>
+                </ul>
+            </div>
+
+            <a href="https://youtube.com/shorts/NK8b0cqJH7Q?si=hvgTpA6DULytZSRG" class="btn-video">🎥 Vídeo: Como manter sua tattoo nítida por anos</a>
+        </div>
+    </div>
+</section>
+</main>
+
+<div id="modalInsumo" class="modal hidden">
+    <div class="modal-content">
+        <h3>Cadastrar Material</h3>
+        <input type="text" id="insumoNome" placeholder="Ex: Luvas Nitrílicas M">
+        <input type="number" id="insumoQtd" placeholder="Quantidade atual">
+        <div class="modal-btns">
+            <button onclick="salvarInsumo()" class="btn-gold">Adicionar</button>
+            <button onclick="fecharModalInsumo()" class="btn-outline">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+<div id="modal" class="modal hidden">
+    <div class="modal-content">
+        <h3>Cadastrar Nova Joia</h3>
+        <form id="product-form">
+            <input type="text" id="prodNome" placeholder="Nome da Joia" required>
+            <input type="number" id="prodPreco" placeholder="Preço de Venda" required>
+            <input type="number" id="prodQtd" placeholder="Quantidade em Estoque" required>
+            <textarea id="prodDesc" placeholder="Descrição para o cliente (ex: Titânio, 8mm)"></textarea>
+            <label>Foto da Joia:</label>
+            <input type="file" id="prodFoto" accept="image/*">
+            <div class="modal-btns">
+                <button type="submit" class="btn-gold">Salvar no Catálogo</button>
+                <button type="button" id="closeModal" class="btn-outline">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<footer class="main-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Consuelo & Arte Corporal</h4>
+            <p>Tatuagem e Perfuração corporal.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Contato</h4>
+            <p>📍 Palmas - To | Dianópolis - TO</p>
+            <p>📱 (63) 99200-3431</p>
+        </div>
+        <div class="footer-section">
+            <h4>Redes Sociais</h4>
+            <div class="social-links">
+                <a href="https://www.instagram.com/consuelo.tattoo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-icon">
+                    <img src="img.img/Instagram-Gradient-Logo-PNG.png" alt="Instagram">
+                    <span>Instagram</span>
+                </a>
+                <a href="https://wa.me/63992003431" target="_blank" class="social-icon">
+                    <img src="img.img/whatsapp.png" alt="WhatsApp">
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Consuelo & Arte corporal | Studio - Todos os direitos reservados</p>
+    </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
