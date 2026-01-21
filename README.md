@@ -58,7 +58,21 @@ app.js: Lógica de negócio, manipulação do DOM e persistência.
 
 img.img/: Pasta contendo os ativos visuais e fotos de portfólio.
 
+
+Checklist de conformidade 
+[ ✓] Estruturas básicas (condicionais, laços, funções).
+[ ✓] Objetos + Arrays com map/filter/reduce (≥ 3 métodos).
+[ ✓] Arrow functions (incluindo eventos).
+[ ✓] DOM dinâmico (criação/remoção/atualização; formulários e eventos).
+[ ✓] Requisição assíncrona com fetch + loading/erros.
+[✓ ] Promises (.then/.catch) e async/await (try/catch).
+[ ✓] Web Storage para persistência.
+[ ✓] +1 API HTML5 opcional (File/Geolocation/History/Canvas/Audio/Video/Clipboard).
+[ ✓] Responsivo + semântica + acessibilidade básica.
+[✓ ] Organização de arquivos e README completo.
+
 Desenvolvido por: Jaíne Consuelo Lopes Fernandes
+Este projeto foi desenvolvido de forma individual, utilizando inteligência artificial (Gemini 3 Flash) como ferramenta de apoio técnico.
 
 Curso: Sistemas para Internet
 
